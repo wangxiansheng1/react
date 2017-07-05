@@ -1,0 +1,5 @@
+
+/*顶部导航样式*/
+.header{width: 100%; height: .88rem; line-height: .88rem; background: #ffffff ; font-size: .34rem; border-bottom: 1px solid #f1f1f1; text-align: center; float: left}
+.header .back{ background: url(../images/login_04.png) no-repeat center; width: .33rem; height: .33rem; display: block; float: left; padding: .275rem; position: relative; z-index: 2; background-size: .33rem }
+.header h2{ width: 60% ; overflow: hidden; padding: 0 20%; text-align: center; margin: auto; font-size: .34rem; position: absolute; z-index: 1; height: .88rem; color: #323232; text-overflow: ellipsis; white-space: nowrap; line-height: .88rem}

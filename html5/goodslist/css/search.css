@@ -1,0 +1,22 @@
+.header{ background: #f53828}
+.back{background:url(../img/ic_arrow_back_white.png) no-repeat center center;}
+.search-box{ float: left; display: block ;width: 5rem; height: .6rem; background: #db1100; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; margin-top: .11rem; color: #ffffff; padding-left: .2rem }
+input::-webkit-input-placeholder{ color: #ffffff}
+input:-ms-input-placeholder{ color: #ffffff}
+::-moz-placeholder{ color: #ffffff}
+:-moz-placeholder{ color: #ffffff}
+.search-btn{ width: 1.13rem; height: .88rem; line-height: .88rem; text-align: center ;font-size: .24rem; color: #ffffff; display: block; float: left}
+
+.hot-search-list{ width: 94%; height: auto; float: left; padding: .4rem 3%}
+.hot-search-list p{ width: 100%; height: auto; float: left}
+.hot-search-list p .hot-search-title{ width: auto; height: auto; font-size: .3rem; font-weight: 500; float: left}
+.hot-history-delete{ width: .34rem; height: .4rem ; display: block; float: right; background: url(img/ic_delete_search.png) no-repeat; background-size: 100%; margin-right: .2rem}
+.hot-search-list .hot-search-tags{ width: 100%; height: auto; float: left; font-size: .24rem; padding: .2rem 0}
+.hot-search-list .hot-search-tags a{ padding: .16rem .2rem; background: #f7f7f7; border-radius: .32rem; -moz-border-radius: .32rem; -webkit-border-radius: .32rem; float: left; color: #757575; margin-top: .2rem; margin-right: .2rem}
+
+/*搜索结果*/
+.search-land{ width: 100%; height: auto; float: left}
+.search-land ul { width: 100%; height: auto; float: left; }
+.search-land ul p{ width: 94%; height: auto ; font-size: .3rem; font-weight: 500;padding: 0 3%; float: left; line-height: .8rem}
+.search-land ul li{ width: 94%; height: auto; padding: .3rem 3%; border-top: 1px solid #e0e0e0; float: left; font-size: .24rem}
+.search-land ul li img{ width: .3rem; height: auto; margin-right: .12rem; display: block; float: left; position: relative; top: -.04rem}

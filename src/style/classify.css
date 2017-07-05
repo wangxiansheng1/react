@@ -1,0 +1,18 @@
+/*tabs*/
+.tabs{ width: 94%; height: .8rem; float: left; box-shadow: 0px 3px 4px 0px rgb( 225, 225, 225 ); -webkit-box-shadow: 0px 3px 4px 0px rgb( 225, 225, 225 ); -moz-box-shadow: 0px 3px 4px 0px rgb( 225, 225, 225 ); ;  font-size: .26rem; line-height: .8rem; padding: 0 3%; z-index: 9; position: relative}
+.tabs a{ padding: .2rem .15rem; margin-right: .2rem}
+.tabs.active{ border-bottom: .06rem solid #f53828; }
+/*国家*/
+.classify-city{ width: 100%; height: auto; float: left; z-index: -1 }
+.classify-city a{ width: 3.3rem; height: auto; margin-left: .3rem; float: left; font-size: .26rem; margin-top: .3rem}
+.classify-city a img{ width: 100%; height: auto; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; display: block}
+.classify-city a span{ margin-top: .2rem; display: block; margin-left: .14rem; text-align: center}
+/*分类*/
+.classify-type{ width: 100%; height: auto; float: left; z-index: -1}
+.classify-type .classify-type-list{ width: 1.6rem; height: 100%; float: left; border-right: .02rem solid #efefef; font-size: .24rem; overflow-y: auto}
+.classify-type .classify-type-list a{ display: block; width: 1.4rem; height: .48rem; border-radius: .24rem; -moz-border-radius: .24rem; -webkit-border-radius: .24rem; margin: .34rem .1rem; text-align: center; line-height: .48rem}
+.list-active{ background: #f53828; color: #ffffff}
+.classify-type .classify-type-goods{ width: 5.88rem; height: auto; overflow-y: auto; float: left;}
+.classify-type .classify-type-goods a{ width: 1.2rem; height: auto; float: left; margin-left: .57rem; font-size: .24rem; margin-top: .3rem; color: #757575; margin-bottom: .1rem}
+.classify-type .classify-type-goods a img{ display: block; width: 100%; height: auto}
+.classify-type .classify-type-goods a span{ display: block; width: 100%; height: auto; margin-top: .1rem; text-align: center; white-space: normal; overflow: hidden}

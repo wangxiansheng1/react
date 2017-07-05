@@ -1,0 +1,20 @@
+/*tabs*/
+.tabs{ width: 94%; height: .8rem; float: left; box-shadow: 0px 3px 4px 0px rgb( 225, 225, 225 ); -webkit-box-shadow: 0px 3px 4px 0px rgb( 225, 225, 225 ); -moz-box-shadow: 0px 3px 4px 0px rgb( 225, 225, 225 ); ;  font-size: .26rem; line-height: .8rem; padding: 0 3%; z-index: 9; position: fixed; background: #ffffff}
+.tabs a{ padding: .2rem .15rem ; margin-right: .2rem; text-align: center; color: #757575}
+.tabs-price{ background: url(../img/ic_arrow.png) no-repeat  right; background-size: .14rem auto}
+.active{ border-bottom: .06rem solid #f53828; color: #f53828 }
+
+/*goodslist列表*/
+.goodslist{ width: 100%; height: auto; float: left; margin-top: .8rem}
+.goodslist ul{ width: 100%; height: auto; float: left}
+.goodslist ul li{ width: 100%; height: auto; display: block; margin-top: .1rem; float: left; border-bottom: 1px solid #eaeaea; padding-bottom: .1rem}
+.goodslist ul li a{ width: 2.4rem; height: 2.4rem; float: left; padding-left: .18rem}
+.goodslist ul li a img{ width: 2.4rem; height: 2.4rem; display: block}
+.goodslist ul li .goodslist-item{ width: 4.39rem; height: 2.4rem; padding: 0 .35rem 0 .18rem; float: left}
+.goodslist ul li .goodslist-item .goodslist-item-title{ font-size: .3rem; font-weight: 500; line-height: .4rem ;margin-top: .1rem; width: 100%; height: .8rem; overflow: hidden; float: left;}
+.goodslist ul li .goodslist-item .goodslist-item-rulers{ font-size: .24rem; display: block; width: 100%; height: auto; float: left; margin-top: .17rem}
+.goodslist ul li .goodslist-item .goodslist-item-rulers em{ margin-right: .15rem; color: #757575}
+.goodslist ul li .goodslist-item .goodslist-item-price { display: block;  width: 100%; height: auto; float: left; font-size: .3rem; margin-top: .17rem}
+.goodslist ul li .goodslist-item .goodslist-item-price i{ font-size: .32rem; color: #f53828;}
+.goodslist ul li .goodslist-item .goodslist-item-price del{ font-size: .24rem; color: #c0c0c0; text-decoration: line-through; margin-left: .15rem}
+.goodslist ul li .goodslist-item .goodslist-item-taxes { width: 100%; height: auto; font-size: .24rem; color: #757575; float: left; margin-top: .25rem}

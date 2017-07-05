@@ -1,0 +1,95 @@
+
+.open_top{ width:100%; height:6.7rem; overflow:hidden;}
+.open_top img{ width:100%; height:auto;}
+.pagination { position:relative; z-index:1; margin-top:-1rem; width:100%; text-align:center;}
+.pagination .swiper-pagination-bullet-active{background: #f53828;}
+.pagination .swiper-pagination-bullet{ width:.14rem; height:.14rem;}
+
+
+
+.nwrapper{padding-bottom: .9rem}
+.npost-list{ width: 100%; height: auto; float: left; padding-bottom: .2rem; border-bottom: 1px solid #efefef}
+.npost-list .npost-list-title{ font-size: .3rem; font-weight: 500; line-height: .4rem; height: .8rem; width: 94%; padding: 0 3%; overflow: hidden; margin-top: .2rem}
+.npost-list .npost-list-price{ width: 94%; height: auto; padding: 0 3%; float: left; font-size: 0; margin-top: .14rem}
+.npost-list .npost-list-price i{ font-size: .3rem; color: #f53828}
+.npost-list .npost-list-price del{ font-size: .24rem; color: #c0c0c0; text-decoration: line-through; margin-left: .18rem}
+.npost-list .npost-list-taxes{ width: 94%; height: auto; padding: 0 3%; float: left; font-size: .26rem; color: #757575; margin-top: .14rem}
+.npost-list .npost-list-cate{ width: 94%; height: auto; padding: 0 3%; float: left; font-size: .24rem; color: #000000; margin-top: .1rem; }
+.npost-list .npost-list-cate em{ margin-right: .16rem; vertical-align: bottom}
+.npost-list .npost-list-cate em img{ width: .3rem; height: .3rem; margin-right:.1rem; font-size: 0 }
+
+/*规格选择*/
+.npost-fications{ width: 94%; height: .8rem; float: left; font-size: .26rem; padding: 0 3%; line-height: .8rem; border-bottom: 1px solid #efefef}
+.npost-fications em{ width: 1.6rem; height: auto; float: left; margin-right: .2rem}
+.npost-fications span{ width: calc( 100% - 2.4rem); height: .8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; float: left; text-align: right; color: #c0c0c0}
+.npost-fications a{ width: .6rem; height: .6rem; float: right; padding: .1rem 0}
+.npost-fications a img{ width: 100%; height: auto; vertical-align: baseline}
+
+/*参加活动*/
+.npost-join{ width: 94%; height: .8rem; float: left; font-size: .26rem; padding: 0 3%; line-height: .8rem;}
+.npost-join em{ width: 1.3rem; height: auto; float: left; margin-right: .2rem}
+.npost-join span{ width: calc( 100% - 2.4rem); height: .8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; float: left; color: #c1c1c1}
+.npost-join a{ width: .7rem; height: .7rem; float: right; padding: .05rem 0}
+.npost-join a img{ width: 100%; height: auto; vertical-align: baseline}
+
+
+/*评价晒单*/
+.npost-comment{ width: 100%; height: auto; float: left; padding-bottom: .4rem }
+.npost-comment .npost-comment-title{ width: 94%; height: .8rem; line-height: .8rem; float: left;font-size: .26rem; border-bottom: 1px solid #efefef;padding: 0 3%;}
+.npost-comment .npost-comment-title em{ width: 1.6rem; height: auto; float: left;}
+.npost-comment .npost-comment-title span{ width: calc( 100% - 2.2rem ); height: auto; text-align: right; display: block; float: left; color: #c0c0c0; line-height: .8rem }
+.npost-comment .npost-comment-title a{ width: .6rem; height: .6rem; float: right; padding: .1rem 0}
+.npost-comment .npost-comment-title a img{ width: 100%; height: auto; vertical-align: baseline}
+/*评论*/
+.npost-comment .npost-comment-list{ width: 94%; height: auto; float: left; padding: 0 3%; margin-top: .1rem}
+.npost-comment .npost-comment-list .npost-comment-tou{ width: 1rem; height: 1rem; float: left}
+.npost-comment .npost-comment-list .npost-comment-tou img{ width: 100%; height: auto; display: block}
+.npost-comment .npost-comment-list .npost-comment-name{width: calc(100% - 1.2rem); height: auto; float: left; margin-left: .2rem}
+
+.npost-comment .npost-comment-list .npost-comment-name .npost-comment-ph{ color: #757575; font-size: .24rem; display: block; width: 100%; height: auto; float: left}
+.npost-comment .npost-comment-list .npost-comment-name .npost-comment-time{ color: #c9c9c9; font-size: .24rem; display: block; float: left; width: 100%; height: auto; margin-top: .1rem}
+.npost-comment .npost-comment-list .npost-comment-name .npost-comment-neirong{ color: #000000; font-size: .28rem; display: block; float: left; width: 100%; height: auto; margin-top: .2rem; line-height: .32rem}
+
+/*上拉头部*/
+.npost-top{ width: 100%; height: .8rem; float: left; font-size: .24rem; color: #757575; text-align: center; line-height: .8rem}
+.npost-top img{ width: .4rem; height: .4rem; margin-right: .4rem}
+
+
+
+
+/*底部*/
+.npost-foot{ width: 100%; height: .9rem; position: fixed; bottom: 0; font-size: .28rem; z-index: 10; background: #ffffff}
+.npost-foot .npost-foot-main{ width: 100%; height: .9rem;}
+.npost-foot .npost-foot-main .npost-foot-left{ width: 3.1rem; height: .9rem; float: left; background: #ffffff}
+.npost-foot .npost-foot-main .npost-foot-left a{ width: 1rem; height: .9rem; float: left}
+.npost-foot .npost-foot-main .npost-foot-left a em{ width: 1rem; height: .9rem; float: left; text-align: center; line-height: .9rem}
+.npost-foot .npost-foot-main .npost-foot-left a em img{ width: .6rem; height: .6rem;}
+.npost-foot .npost-foot-main .npost-foot-add{ width: 2.2rem; height: .9rem; float: left; background: #ff9800; color: #ffffff; text-align: center; line-height: .9rem}
+.npost-foot .npost-foot-main .npost-foot-kill{ width: 2.18rem; height: .9rem; float: left; margin-left: .02rem; background: #f53828; color: #ffffff; text-align: center; line-height: .9rem}
+
+
+/*购物车*/
+.npost-shopping{ width: 100%; height: 100%; position: fixed; background: rgba(0,0,0,.6); z-index: 9; top: 0; display: none}
+.npost-shopping-list{ width: 100%; height: auto; position: absolute; background: #ffffff; bottom: .9rem}
+.npost-shopping-title{ width: 94%; height: 2rem; padding: 0 3%; float: left; margin-top: .2rem}
+.npost-shopping-title a{ width: 2rem; height: 2rem; float: left;}
+.npost-shopping-title img{ width: 2rem; height: 2rem; display: block}
+.npost-shopping-item{ width: 4.8rem; height: 2rem; padding-left: .18rem; float: left}
+.shopping-item-title{ font-size: .3rem; font-weight: 500; line-height: .4rem ;margin-top: .1rem; width: 100%; height: .8rem; overflow: hidden; float: left;}
+.shopping-item-price { display: block;  width: 100%; height: auto; float: left; font-size: .3rem; margin-top: .17rem}
+.shopping-item-price i{ font-size: .32rem; color: #f53828;}
+.shopping-item-price del{ font-size: .24rem; color: #c0c0c0; text-decoration: line-through; margin-left: .15rem}
+.shopping-item-taxes { width: 100%; height: auto; font-size: .24rem; color: #757575; float: left; margin-top: .25rem}
+
+.npost-shopping-rulers{ width: 100%; height: auto; float: left; margin: .2rem 0 }
+.npost-shopping-rulers ul li{width: 100%; height: auto; float: left; padding: .2rem 0; border-bottom: 1px solid #efefef}
+.npost-shopping-rulers ul li span{ width: 93%; height: auto; display: block; float: left; font-size: .26rem; font-weight: 500; padding: 0 4%}
+.npost-shopping-rulers ul li input{ padding: .1rem .3rem; float: left; margin-left: .3rem; margin-top: .2rem; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; background: #f2f2f2 }
+
+.npost-shopping-add{ width: 93%; height: 1rem; float: left; padding: 0 4%}
+.npost-shopping-add span{ font-size: .24rem; line-height: 1rem; float: left}
+.npost-shopping-btn{ float: right; width: auto; height: .6rem; line-height: 1rem; padding: .2rem 0}
+.npost-shopping-btn a{ width: .6rem; height: .6rem; display: block; float: left;}
+.npost-shopping-btn a img{ display: block; width: 100%}
+.npost-shopping-btn input{ display: block; float: left;; padding: 0 .2rem; width: 1rem; height: .6rem; line-height: .6rem; font-size: .3rem; text-align: center}
+.npost-shopping-kongbai{ width: 100%; height: auto; display: block}

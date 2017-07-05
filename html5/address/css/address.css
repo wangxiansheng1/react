@@ -1,0 +1,32 @@
+ .shp-cart-compile>img {
+ 	width: .3rem;
+ 	height: .3rem;
+ 	float: left;
+ 	margin-top: .1rem;
+ 	margin-left: .2rem;
+ }
+ 
+ .counter {
+ 	 
+ 	width: 100%;
+ 	height: 100%;
+ }
+ 
+ .counter li {
+ 	background: #FFFFFF;
+ 	width: 100%;
+ 	height: 1.45rem;
+ 	margin-top: .08rem;
+ }
+ 
+ .counter li .address-header {
+ 	float: left;
+ 	width: 100%;
+ 	height: .05rem;
+ }
+ 
+ .counter li .address-header>img {
+ 	width: 100%;
+ 	height: 100%;
+ 	float: left;
+ }
