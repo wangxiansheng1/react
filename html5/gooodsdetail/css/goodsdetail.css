@@ -60,7 +60,7 @@
 /*底部*/
 .npost-foot{ width: 100%; height: .9rem; position: fixed; bottom: 0; font-size: .28rem; z-index: 10; background: #ffffff}
 .npost-foot .npost-foot-main{ width: 100%; height: .9rem;}
-.npost-foot .npost-foot-main .npost-foot-left{ width: 3.1rem; height: .9rem; float: left; background: #ffffff}
+.npost-foot .npost-foot-main .npost-foot-left{ width: 3.1rem; height: .9rem; float: left; background:rgba(255,255,255,.6) }
 .npost-foot .npost-foot-main .npost-foot-left a{ width: 1rem; height: .9rem; float: left}
 .npost-foot .npost-foot-main .npost-foot-left a em{ width: 1rem; height: .9rem; float: left; text-align: center; line-height: .9rem}
 .npost-foot .npost-foot-main .npost-foot-left a em img{ width: .6rem; height: .6rem;}
@@ -69,8 +69,7 @@
 
 
 /*购物车*/
-.npost-shopping{ width: 100%; height: 100%; position: fixed; background: rgba(0,0,0,.6); z-index: 9; top: 0; display: none}
-.npost-shopping-list{ width: 100%; height: auto; position: absolute; background: #ffffff; bottom: .9rem}
+.npost-shopping-list{ width: 100%; height: auto; position: fixed; background: #ffffff; top: 0; left: 0; right: 0 ; bottom: 0; z-index: 999; transform: translate(0,100%);transition: transform .2s cubic-bezier(0,0,.25,1) }
 .npost-shopping-title{ width: 94%; height: 2rem; padding: 0 3%; float: left; margin-top: .2rem}
 .npost-shopping-title a{ width: 2rem; height: 2rem; float: left;}
 .npost-shopping-title img{ width: 2rem; height: 2rem; display: block}

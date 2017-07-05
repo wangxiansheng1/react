@@ -15,7 +15,7 @@
     <script src="../common/js/iscroll.js"></script>
     <script src="js/index.js"></script>
     <style type="text/css">
-        .navbar-header{width: 100%; height: 1.6rem; display: block; position: fixed; z-index: auto}
+        .navbar-header{width: 100%; height: 1.6rem; display: block; position: fixed; z-index: auto; max-width: 750px; min-width: 320px}
         .navbar-header header{ width: 100%; height: auto; background: #f53828; padding: .1rem 0}
         .navbar-header header .search-placeholder{ width: 80%; height: .6rem; background: #f2f2f2; border-radius: .1rem; margin: 0 auto; text-align: center}
         .navbar-header header .search-placeholder span{ font-size: .24rem; color: #cccccc; display: block; width: 100%; height: .6rem; line-height: .6rem }
@@ -68,7 +68,7 @@
 <!--content-->
 <div class="L-brand-list" style="padding-top: 1.6rem">
     <div class="u-brand-wrap">
-
+222
     </div>
 </div>
 
@@ -86,6 +86,15 @@
         });
     }
     window.addEventListener("DOMContentLoaded",loaded,false);
+
+    $('.equal-table li').click(function () {
+        let Index = $(this).index();
+        $('.equal-table .nav-current').removeClass('nav-current');
+        $('.equal-table li').eq(Index).addClass('nav-current');
+        let PositionIndex = document.querySelector('#wrapper li[class="nav-current"]');
+        myscroll.scrollToElement(PositionIndex,200,true,true);
+    });
+
     $(window).ready(function () {
         $('#wrapper li').click(function () {
 

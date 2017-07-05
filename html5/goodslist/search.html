@@ -1,97 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索页面</title>
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <link href="../common/css/common.css" rel="stylesheet">
+    <script src="js/goodlist.js"></script>
+    <link href="css/search.css" rel="stylesheet">
+    <script src="../common/js/zepto.min.js"></script>
+    <style type="text/css">
 
-	<head>
-		<meta charset="UTF-8">
-		<title>搜索页面</title>
-		<meta name="description" content="">
-		<meta name="Keywords" content="">
-		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-touch-fullscreen" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<meta name="format-detection" content="telephone=no,email=no">
-		<link href="../common/css/common.css" rel="stylesheet">
-		<script src="js/goodlist.js"></script>
-		<link href="css/search.css" rel="stylesheet">
-		<script src="../common/js/zepto.min.js"></script>
-		<style type="text/css">
+    </style>
+</head>
+<body>
 
-		</style>
-	</head>
+<div class="nwrapper">
 
-	<body>
+    <!--top-->
+    <div class="header">
+        <a href="javascript:;" class="back"></a>
+        <input type="text" maxlength="20" autocomplete="off" name="keyword" placeholder="请输入关键字" class="search-box" >
+        <a href="javascript:void (0)" class="search-btn">搜索</a>
+    </div>
 
-		<div class="nwrapper">
 
-			<!--top-->
-			<div class="header">
-				<a href="javascript:;" class="back"></a>
-				<input type="text" maxlength="20" autocomplete="off" name="keyword" placeholder="请输入关键字" class="search-box">
-				<a href="javascript:void (0)" class="search-btn">搜索</a>
-			</div>
+    <!--search list-->
+    <div class="hot-search-list">
+        <p><span class="hot-search-title">热门搜索</span></p>
+        <div class="hot-search-tags">
+            <a href="javascript: void (0)" class="search-tags-item">德亚酸奶</a>
+            <a href="javascript: void (0)" class="search-tags-item">iPhone 7</a>
+            <a href="javascript: void (0)" class="search-tags-item">美国钙片</a>
+            <a href="javascript: void (0)" class="search-tags-item">创意沙发床</a>
+            <a href="javascript: void (0)" class="search-tags-item">澳洲牛奶</a>
+            <a href="javascript: void (0)" class="search-tags-item">梳妆台小户型</a>
+            <a href="javascript: void (0)" class="search-tags-item">阳光椅子悠闲</a>
+        </div>
+    </div>
 
-			<!--search list-->
-			<div class="hot-search-list">
-				<p><span class="hot-search-title">热门搜索</span></p>
-				<div class="hot-search-tags">
-					<a href="javascript: void (0)" class="search-tags-item">德亚酸奶</a>
-					<a href="javascript: void (0)" class="search-tags-item">iPhone 7</a>
-					<a href="javascript: void (0)" class="search-tags-item">美国钙片</a>
-					<a href="javascript: void (0)" class="search-tags-item">创意沙发床</a>
-					<a href="javascript: void (0)" class="search-tags-item">澳洲牛奶</a>
-					<a href="javascript: void (0)" class="search-tags-item">梳妆台小户型</a>
-					<a href="javascript: void (0)" class="search-tags-item">阳光椅子悠闲</a>
-				</div>
-			</div>
+    <!--search history-->
+    <div class="hot-search-list">
+        <p><span class="hot-search-title">搜索历史</span><i class="hot-history-delete"></i></p>
+        <div class="hot-search-tags">
+            <a href="javascript: void (0)" class="search-tags-item">德亚酸奶</a>
+            <a href="javascript: void (0)" class="search-tags-item">iPhone 7</a>
+            <a href="javascript: void (0)" class="search-tags-item">美国钙片</a>
+            <a href="javascript: void (0)" class="search-tags-item">创意沙发床</a>
+            <a href="javascript: void (0)" class="search-tags-item">澳洲牛奶</a>
+            <a href="javascript: void (0)" class="search-tags-item">梳妆台小户型</a>
+            <a href="javascript: void (0)" class="search-tags-item">阳光椅子悠闲</a>
+        </div>
+    </div>
 
-			<!--search history-->
-			<div class="hot-search-list">
-				<p><span class="hot-search-title">搜索历史</span><i class="hot-history-delete"></i></p>
-				<div class="hot-search-tags">
-					<a href="javascript: void (0)" class="search-tags-item">德亚酸奶</a>
-					<a href="javascript: void (0)" class="search-tags-item">iPhone 7</a>
-					<a href="javascript: void (0)" class="search-tags-item">美国钙片</a>
-					<a href="javascript: void (0)" class="search-tags-item">创意沙发床</a>
-					<a href="javascript: void (0)" class="search-tags-item">澳洲牛奶</a>
-					<a href="javascript: void (0)" class="search-tags-item">梳妆台小户型</a>
-					<a href="javascript: void (0)" class="search-tags-item">阳光椅子悠闲</a>
-				</div>
-			</div>
+    <!--search process-->
+    <div class="search-land" style="display: none">
+        <ul>
+            <p class="search-land">商品</p>
+            <li>德亚纯牛奶1L</li>
+            <li>德亚纯牛奶1L</li>
+            <li>德亚纯牛奶1L</li>
+            <li>德亚纯牛奶1L</li>
+        </ul>
+        <div class="nhr"></div>
+        <ul>
+            <p>店铺</p>
+            <li><img src="img/ic_coupon_store.png">德玛旗舰店</li>
+            <li><img src="img/ic_coupon_store.png">德玛旗舰店</li>
+            <li><img src="img/ic_coupon_store.png">德玛旗舰店</li>
+            <li><img src="img/ic_coupon_store.png">德玛旗舰店</li>
+            <li><img src="img/ic_coupon_store.png">德玛旗舰店</li>
+        </ul>
+    </div>
 
-			<!--search process-->
-			<div class="search-land" style="display: none">
-				<ul>
-					<p class="search-land">商品</p>
-					<li>德亚纯牛奶1L</li>
-					<li>德亚纯牛奶1L</li>
-					<li>德亚纯牛奶1L</li>
-					<li>德亚纯牛奶1L</li>
-				</ul>
-				<div class="nhr"></div>
-				<ul>
-					<p>店铺</p>
-					<li><img src="img/ic_coupon_store.png">德玛旗舰店</li>
-					<li><img src="img/ic_coupon_store.png">德玛旗舰店</li>
-					<li><img src="img/ic_coupon_store.png">德玛旗舰店</li>
-					<li><img src="img/ic_coupon_store.png">德玛旗舰店</li>
-					<li><img src="img/ic_coupon_store.png">德玛旗舰店</li>
-				</ul>
-			</div>
-
-		</div>
-	</body>
-	<script type="text/javascript">
-		$(window).ready(function() {
-			$('.search-box').focus(function() {
-				$('.hot-search-list').hide();
-				$('.search-land').show();
-			});
-			$('.search-box').blur(function() {
-				$('.hot-search-list').show();
-				$('.search-land').hide();
-			})
-		})
-	</script>
-
+</div>
+</body>
+<script type="text/javascript">
+    $(window).ready(function () {
+        $('.search-box').focus(function () {
+            $('.hot-search-list').hide();
+            $('.search-land').show();
+        });
+        $('.search-box').blur(function () {
+            $('.hot-search-list').show();
+            $('.search-land').hide();
+        })
+    })
+</script>
 </html>

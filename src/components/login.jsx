@@ -266,11 +266,11 @@ class Login extends Component {
     handleClick(){
         hashHistory.push({
             pathname: '/register',
-            query: {
-                title:2,
-                time:3,
-                text:4
-            },
+            // query: {
+            //     title:2,
+            //     time:3,
+            //     text:4
+            // },
         })
     }
 

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地区选择</title>
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <link href="../common/css/common.css" rel="stylesheet">
+    <script src="../common/js/zepto.min.js"></script>
+    <script src="js/area.js"></script>
+    <script src="../common/js/swiper.jquery.min.js"></script>
+    <link href="../common/css/swiper.min.css" rel="stylesheet">
+    <style type="text/css">
+        .choose-address-page {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden
+        }
+
+        .choose-address-page .head-fix {
+            width: 100%;
+            height: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100
+        }
+
+        .header{ background: #f2f2f2}
+
+        .head-address-ul {
+            list-style: none;
+            overflow: hidden;
+            font-size: .24rem
+        }
+
+        .head-address-ul li {
+            width: 25%;
+            height: .88rem;
+            position: relative;
+            text-align: center;
+            float: left;
+            display: block;
+            line-height: .9rem
+        }
+
+        .head-address-ul li.head-address-li:after {
+            width: 60%;
+            height: 1px;
+            border-bottom: 2px solid #f23030;
+            position: absolute;
+            bottom: 1px;
+            left: 50%;
+            content: '';
+            margin-left: -30%;
+        }
+
+        .head-address-ul li.head-address-li {
+            color: #f53828
+        }
+
+        .address-container {
+            margin-top: 1.76rem;
+            width: 100%;
+            height: auto;
+            overflow: hidden
+        }
+
+        .swiper-slide p{ font-size: .32rem; width: 94%; height: auto; padding: .25rem 3%; border-bottom: 1px solid #f1f1f1}
+
+    </style>
+</head>
+<body class="nwrapper">
+<!--选择区域-->
+<div class="choose-address-page" id="chooseAddressPage">
+
+    <!--top-->
+    <div class="head-fix">
+        <header class="header">
+            <a href="javascript: void (0)" class="back"></a>
+            <h2>地址选择</h2>
+        </header>
+
+        <ul class="head-address-ul" id="headAddressUl">
+            <li mytitle="0" class="head-address-li">请选择</li>
+            <li mytitle="1" >2</li>
+            <li mytitle="2" >3</li>
+        </ul>
+    </div>
+
+    <!--address container-->
+    <div class="address-container" id="addressContainer">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide stop-swiping address-ul"></div>
+                <div class="swiper-slide stop-swiping address-ul"></div>
+                <div class="swiper-slide stop-swiping address-ul"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="js/main.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+
+        let swiper = new Swiper('.address-container .swiper-container', {
+            visibilityFullFit: true,
+            noSwiping : true,
+            noSwipingClass : 'stop-swiping',
+        });
+
+        $('.head-address-ul li').click(function () {
+            if ($(this).text() == "") {
+                return false;
+            }
+            let Index = $(this).index();
+            $('.head-address-ul .head-address-li').removeClass('head-address-li');
+            $(this).addClass('head-address-li');
+            swiper.slideTo(Index, 300, false);
+        })
+        
+        function area() {
+            let Length = provinceList.length;
+            let html = '';
+            for(let i = 0; i < Length ; i++){
+                html += '<p>' + provinceList[i].name  +'</p>';
+            }
+            $('#addressContainer .swiper-slide').eq(0).empty().append(html);
+        }
+        area();
+
+
+    })
+</script>
+</html>

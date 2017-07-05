@@ -1,397 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <link href="../common/css/common.css" rel="stylesheet">
+    <script src="js/goodsdetail.js"></script>
+    <link href="css/shoppingstore.css" rel="stylesheet">
+    <script src="../common/js/zepto.min.js"></script>
+    <style type="text/css">
+        .shp-cart-no{ width: 94%; height: auto; border-bottom: 1px solid #e0e0e0; margin: 0 3% ; padding-bottom: 1rem}
+        .shp-cart-no img{ width: 1.2rem; height: auto; display: block; margin: 0 auto; margin-top: 1.6rem}
+        .shp-cart-no span{ width: 100%; height: auto; display: block; text-align: center; font-size: .3rem; color: #757575; margin-top: .4rem}
+        .shp-cart-no a{ width: 1.4rem; height: .6rem; display: block; background: #f53828; color: #ffffff; font-size: .24rem; margin: 0 auto; text-align: center; line-height: .6rem; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; margin-top: .4rem}
 
-	<head>
-		<meta charset="UTF-8">
-		<title>购物车</title>
-		<meta name="description" content="">
-		<meta name="Keywords" content="">
-		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-touch-fullscreen" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<meta name="format-detection" content="telephone=no,email=no">
-		<link href="../common/css/common.css" rel="stylesheet">
-		<script src="js/goodsdetail.js"></script>
-		<link href="css/shoppingstore.css" rel="stylesheet">
-		<script src="../common/js/zepto.min.js"></script>
-		<style type="text/css">
-			.shp-cart-no {
-				width: 94%;
-				height: auto;
-				border-bottom: 1px solid #e0e0e0;
-				margin: 0 3%;
-				padding-bottom: 1rem
-			}
-			
-			.shp-cart-no img {
-				width: 1.2rem;
-				height: auto;
-				display: block;
-				margin: 0 auto;
-				margin-top: 1.6rem
-			}
-			
-			.shp-cart-no span {
-				width: 100%;
-				height: auto;
-				display: block;
-				text-align: center;
-				font-size: .3rem;
-				color: #757575;
-				margin-top: .4rem
-			}
-			
-			.shp-cart-no a {
-				width: 1.4rem;
-				height: .6rem;
-				display: block;
-				background: #f53828;
-				color: #ffffff;
-				font-size: .24rem;
-				margin: 0 auto;
-				text-align: center;
-				line-height: .6rem;
-				border-radius: 4px;
-				-moz-border-radius: 4px;
-				-webkit-border-radius: 4px;
-				margin-top: .4rem
-			}
-			
-			.shp-history {
-				width: 100%;
-				height: auto;
-			}
-			
-			.shp-history p {
-				width: 94%;
-				height: auto;
-				margin: .3rem 3%;
-				font-size: .32rem;
-				font-weight: 600;
-			}
-			
-			.swiper-container {
-				width: 100%;
-				height: auto;
-				overflow: hidden
-			}
-			
-			.swiper-container .swiper-wrapper {
-				width: 100%;
-				height: auto;
-				font-size: 0;
-				float: left;
-				overflow: auto
-			}
-			
-			.swiper-container .swiper-wrapper .swiper-slide {
-				margin-left: .3rem;
-				display: inline-block
-			}
-			
-			.shp-history-goods {
-				width: 2.4rem;
-				height: auto
-			}
-			
-			.shp-history-goods img {
-				width: 2.4rem;
-				height: 2.4rem
-			}
-			
-			.shp-history-goods .shp-history-price .shp-goods-name {
-				width: 2.4rem;
-				height: .6rem;
-				font-size: .28rem;
-				line-height: .32rem;
-				float: left;
-				overflow: hidden;
-				margin-top: .14rem
-			}
-			
-			.shp-history-goods .shp-history-price .shp-goods-price {
-				width: 100%;
-				height: auto;
-				float: left;
-				margin-top: .12rem
-			}
-			
-			.shp-history-goods .shp-history-price .shp-goods-price em {
-				font-size: .28rem;
-				color: #f53828;
-				float: left
-			}
-			
-			.shp-history-goods .shp-history-price .shp-goods-price del {
-				font-size: .20rem;
-				color: #757575;
-				text-decoration: line-through;
-				float: left;
-				line-height: .3rem;
-				margin-left: 20px
-			}
-		</style>
-	</head>
+        .shp-history{ width: 100%; height: auto; }
+        .shp-history p{ width: 94%; height: auto; margin: .3rem 3%; font-size: .32rem; font-weight: 600;}
 
-	<body>
+        .swiper-container{ width: 100%; height: auto; overflow: hidden}
+        .swiper-container .swiper-wrapper{ width: 100%; height: auto; font-size: 0; float: left; overflow: auto}
+        .swiper-container .swiper-wrapper .swiper-slide{ margin-left: .3rem; display: inline-block}
 
-		<!--shopping store-->
-		<div class="nwrapper">
 
-			<!--header-->
-			<div class="header">
-				<a href="javascript:void (0)" class="shp-cart-compile">编辑</a>
-				<h2>购物车</h2>
-				<a href="javascript:void (0)" class="rightlink"><img src="img/icon_notifications_gray.png"></a>
-			</div>
+        .shp-history-goods{ width: 2.4rem; height: auto}
+        .shp-history-goods img{ width: 2.4rem; height: 2.4rem}
+        .shp-history-goods .shp-history-price .shp-goods-name{ width: 2.4rem; height: .6rem ;font-size: .28rem; line-height: .32rem; float: left; overflow: hidden; margin-top: .14rem }
+        .shp-history-goods .shp-history-price .shp-goods-price{  width: 100%; height: auto; float: left; margin-top: .12rem}
+        .shp-history-goods .shp-history-price .shp-goods-price em{ font-size: .28rem; color: #f53828; float: left}
+        .shp-history-goods .shp-history-price .shp-goods-price del{ font-size: .20rem; color: #757575;text-decoration: line-through; float: left; line-height: .3rem; margin-left: 20px}
 
-			<!--用户未登录-->21
-			<div class="shp-cart-empty" style="display: none">
-				<img src="img/pic_shopping_empty.png">
-				<a href="javascript:void (0)">登录</a>
-			</div>
 
-			<!--shopping list-->
-			<div style="display: none" class="shp-list">
-				<!--店铺-->
-				<div class="shp-list-item">
-					<div class="shp-item-store">
-						<div class="nhr"></div>
-						<div class="shp-store-to">
-							<a href="javascript:void (0)" class="shp-store-co" style="margin-top: .12rem; "></a><span class="shp-store-name">店铺：乐虎海外直邮分布</span></div>
-						<div class="shp-store-activity">
-							<span class="shp-activity-name">每满600远减200活动（已减200）</span>
-							<a href="javascript:void (0)" class="shp-go">再逛逛<img src="img/icon_arrow_right_red.png"></a>
-						</div>
+    </style>
+</head>
+<body>
 
-						<!--goodsList-->
-						<div class="shp-store-goods">
-							<a href="javascript: void (0)" class="shp-store-co shp-store-active" style="margin-top: .5rem"></a>
-							<div class="store-goods-gd">
-								<img src="img/goods_02.jpg" class="store-goods-img">
-								<div class="store-goods-de">
-									<div class="store-goods-sc">
-										<span class="store-goods-name">头皮的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；离开多久没来倒萨里；</span>
-										<span class="store-goods-price">¥11269.00</span>
-									</div>
-									<span class="store-goods-rulers"><em>CL01</em><em>桃色梦幻</em></span>
-									<span class="store-goods-tax">税费：¥15.71</span>
-								</div>
-							</div>
-							<div class="npost-shopping-btn">
-								<a href="javascript:;" class="number-btn-reduce"><img src="img/ic_check_box_less_black.png"></a><input type="text" class="number-btn-amount" value="1">
-								<a href="javascript:;" class="number-btn-add"><img src="img/ic_check_box_add_black.png"></a>
-							</div>
-						</div>
+<!--shopping store-->
+<div class="nwrapper">
 
-						<div class="shp-store-goods">
-							<a href="javascript: void (0)" class="shp-store-co" style="margin-top: .5rem"></a>
-							<div class="store-goods-gd">
-								<img src="img/goods_02.jpg" class="store-goods-img">
-								<div class="store-goods-de">
-									<div class="store-goods-sc">
-										<span class="store-goods-name">头皮的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；离开多久没来倒萨里；</span>
-										<span class="store-goods-price">¥11269.00</span>
-									</div>
-									<span class="store-goods-rulers"><em>CL01</em><em>桃色梦幻</em></span>
-									<span class="store-goods-tax">税费：¥15.71</span>
-								</div>
-							</div>
-							<div class="npost-shopping-btn">
-								<a href="javascript:;" class="number-btn-reduce"><img src="img/ic_check_box_less_black.png"></a><input type="text" class="number-btn-amount" value="1">
-								<a href="javascript:;" class="number-btn-add"><img src="img/ic_check_box_add_black.png"></a>
-							</div>
-						</div>
-					</div>
+    <!--header-->
+    <div class="header">
+        <a href="javascript:void (0)" class="shp-cart-compile">编辑</a>
+        <h2>购物车</h2>
+        <a href="javascript:void (0)" class="rightlink"><img src="img/icon_notifications_gray.png"></a>
+    </div>
 
-					<div class="shp-item-store">
-						<div class="nhr"></div>
-						<div class="shp-store-to">
-							<a href="javascript:void (0)" class="shp-store-co" style="margin-top: .12rem; "></a><span class="shp-store-name">店铺：乐虎海外直邮分布</span></div>
-						<div class="shp-store-activity">
-							<span class="shp-activity-name">每满600远减200活动（已减200）</span>
-							<a href="javascript:void (0)" class="shp-go">去凑单<img src="img/icon_arrow_right_red.png"></a>
-						</div>
 
-						<!--goodsList-->
-						<div class="shp-store-goods">
-							<a href="javascript: void (0)" class="shp-store-co shp-store-active" style="margin-top: .5rem"></a>
-							<div class="store-goods-gd">
-								<img src="img/goods_02.jpg" class="store-goods-img">
-								<div class="store-goods-de">
-									<div class="store-goods-sc">
-										<span class="store-goods-name">头皮的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；离开多久没来倒萨里；</span>
-										<span class="store-goods-price">¥11269.00</span>
-									</div>
-									<span class="store-goods-rulers"><em>CL01</em><em>桃色梦幻</em></span>
-									<span class="store-goods-tax">税费：¥15.71</span>
-								</div>
-							</div>
-							<div class="npost-shopping-btn">
-								<a href="javascript:;" class="number-btn-reduce"><img src="img/ic_check_box_less_black.png"></a><input type="text" class="number-btn-amount" value="1">
-								<a href="javascript:;" class="number-btn-add"><img src="img/ic_check_box_add_black.png"></a>
-							</div>
-						</div>
+    <!--用户未登录-->
+    <div class="shp-cart-empty" style="display: none">
+        <img src="img/pic_shopping_empty.png">
+        <a href="javascript:void (0)">登录</a>
+    </div>
 
-						<div class="shp-store-goods">
-							<a href="javascript: void (0)" class="shp-store-co" style="margin-top: .5rem"></a>
-							<div class="store-goods-gd">
-								<img src="img/goods_02.jpg" class="store-goods-img">
-								<div class="store-goods-de">
-									<div class="store-goods-sc">
-										<span class="store-goods-name">头皮的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；离开多久没来倒萨里；</span>
-										<span class="store-goods-price">¥11269.00</span>
-									</div>
-									<span class="store-goods-rulers"><em>CL01</em><em>桃色梦幻</em></span>
-									<span class="store-goods-tax">税费：¥15.71</span>
-								</div>
-							</div>
-							<div class="npost-shopping-btn">
-								<a href="javascript:;" class="number-btn-reduce"><img src="img/ic_check_box_less_black.png"></a><input type="text" class="number-btn-amount" value="1">
-								<a href="javascript:;" class="number-btn-add"><img src="img/ic_check_box_add_black.png"></a>
-							</div>
-						</div>
-					</div>
 
-					<div class="shp-item-store">
-						<div class="nhr"></div>
-						<div class="shp-store-to">
-							<a href="javascript:void (0)" class="shp-store-co" style="margin-top: .12rem; "></a><span class="shp-store-name">店铺：乐虎海外直邮分布</span></div>
-						<div class="shp-store-activity">
-							<span class="shp-activity-name">每满600远减200活动（已减200）</span>
-							<a href="javascript:void (0)" class="shp-go">再逛逛<img src="img/icon_arrow_right_red.png"></a>
-						</div>
+    <!--shopping list-->
+    <div class="shp-list">
+        <!--店铺-->
+        <div class="shp-list-item">
+            <div class="shp-item-store">
+                <div class="nhr"></div>
+                <div class="shp-store-to"><a href="javascript:void (0)" class="shp-store-co" style="margin-top: .12rem; "></a><span
+                        class="shp-store-name">店铺：乐虎海外直邮分布</span></div>
+                <div class="shp-store-activity">
+                    <span class="shp-activity-name">每满600远减200活动（已减200）</span><a href="javascript:void (0)"
+                                                                                 class="shp-go">再逛逛<img
+                        src="img/icon_arrow_right_red.png"></a>
+                </div>
 
-						<!--goodsList-->
-						<div class="shp-store-goods">
-							<a href="javascript: void (0)" class="shp-store-co shp-store-active" style="margin-top: .5rem"></a>
-							<div class="store-goods-gd">
-								<img src="img/goods_02.jpg" class="store-goods-img">
-								<div class="store-goods-de">
-									<div class="store-goods-sc">
-										<span class="store-goods-name">头皮的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；离开多久没来倒萨里；</span>
-										<span class="store-goods-price">¥11269.00</span>
-									</div>
-									<span class="store-goods-rulers"><em>CL01</em><em>桃色梦幻</em></span>
-									<span class="store-goods-tax">税费：¥15.71</span>
-								</div>
-							</div>
-							<div class="npost-shopping-btn">
-								<a href="javascript:;" class="number-btn-reduce"><img src="img/ic_check_box_less_black.png"></a><input type="text" class="number-btn-amount" value="1">
-								<a href="javascript:;" class="number-btn-add"><img src="img/ic_check_box_add_black.png"></a>
-							</div>
-						</div>
+                <!--goodsList-->
+                <div class="shp-store-goods">
+                    <a href="javascript: void (0)" class="shp-store-co shp-store-active" style="margin-top: .5rem"></a>
+                    <div class="store-goods-gd">
+                        <img src="img/goods_02.jpg" class="store-goods-img">
+                        <div class="store-goods-de">
+                            <div class="store-goods-sc">
+                                <span class="store-goods-name">头皮的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；离开多久没来倒萨里；</span>
+                                <span class="store-goods-price">¥11269.00</span>
+                            </div>
+                            <span class="store-goods-rulers"><em>CL01</em><em>桃色梦幻</em></span>
+                            <span class="store-goods-tax">税费：¥15.71</span>
+                        </div>
+                    </div>
+                    <div class="npost-shopping-btn">
+                        <a href="javascript:;" class="number-btn-reduce"><img src="img/ic_check_box_less_black.png"></a><input type="text" class="number-btn-amount" value="1"><a href="javascript:;" class="number-btn-add"><img src="img/ic_check_box_add_black.png"></a>
+                    </div>
+                </div>
 
-						<div class="shp-store-goods">
-							<a href="javascript: void (0)" class="shp-store-co" style="margin-top: .5rem"></a>
-							<div class="store-goods-gd">
-								<img src="img/goods_02.jpg" class="store-goods-img">
-								<div class="store-goods-de">
-									<div class="store-goods-sc">
-										<span class="store-goods-name">头皮的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；离开多久没来倒萨里；</span>
-										<span class="store-goods-price">¥11269.00</span>
-									</div>
-									<span class="store-goods-rulers"><em>CL01</em><em>桃色梦幻</em></span>
-									<span class="store-goods-tax">税费：¥15.71</span>
-								</div>
-							</div>
-							<div class="npost-shopping-btn">
-								<a href="javascript:;" class="number-btn-reduce"><img src="img/ic_check_box_less_black.png"></a><input type="text" class="number-btn-amount" value="1">
-								<a href="javascript:;" class="number-btn-add"><img src="img/ic_check_box_add_black.png"></a>
-							</div>
-						</div>
-					</div>
+                <div class="shp-store-goods">
+                    <a href="javascript: void (0)" class="shp-store-co" style="margin-top: .5rem"></a>
+                    <div class="store-goods-gd">
+                        <img src="img/goods_02.jpg" class="store-goods-img">
+                        <div class="store-goods-de">
+                            <div class="store-goods-sc">
+                                <span class="store-goods-name">头皮的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；离开多久没来倒萨里；</span>
+                                <span class="store-goods-price">¥11269.00</span>
+                            </div>
+                            <span class="store-goods-rulers"><em>CL01</em><em>桃色梦幻</em></span>
+                            <span class="store-goods-tax">税费：¥15.71</span>
+                        </div>
+                    </div>
+                    <div class="npost-shopping-btn">
+                        <a href="javascript:;" class="number-btn-reduce"><img src="img/ic_check_box_less_black.png"></a><input type="text" class="number-btn-amount" value="1"><a href="javascript:;" class="number-btn-add"><img src="img/ic_check_box_add_black.png"></a>
+                    </div>
+                </div>
+            </div>
 
-				</div>
+            <div class="shp-item-store">
+                <div class="nhr"></div>
+                <div class="shp-store-to"><a href="javascript:void (0)" class="shp-store-co" style="margin-top: .12rem; "></a><span
+                        class="shp-store-name">店铺：乐虎海外直邮分布</span></div>
+                <div class="shp-store-activity">
+                    <span class="shp-activity-name">每满600远减200活动（已减200）</span><a href="javascript:void (0)" class="shp-go">去凑单<img src="img/icon_arrow_right_red.png"></a>
+                </div>
 
-				<!--店铺-->
-			</div>
+                <!--goodsList-->
+                <div class="shp-store-goods">
+                    <a href="javascript: void (0)" class="shp-store-co shp-store-active" style="margin-top: .5rem"></a>
+                    <div class="store-goods-gd">
+                        <img src="img/goods_02.jpg" class="store-goods-img">
+                        <div class="store-goods-de">
+                            <div class="store-goods-sc">
+                                <span class="store-goods-name">头皮的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；离开多久没来倒萨里；</span>
+                                <span class="store-goods-price">¥11269.00</span>
+                            </div>
+                            <span class="store-goods-rulers"><em>CL01</em><em>桃色梦幻</em></span>
+                            <span class="store-goods-tax">税费：¥15.71</span>
+                        </div>
+                    </div>
+                    <div class="npost-shopping-btn">
+                        <a href="javascript:;" class="number-btn-reduce"><img src="img/ic_check_box_less_black.png"></a><input type="text" class="number-btn-amount" value="1"><a href="javascript:;" class="number-btn-add"><img src="img/ic_check_box_add_black.png"></a>
+                    </div>
+                </div>
 
-			<div style="display: none" class="npost-foot">
-				<div class="npost-foot-main">
-					<div class="npost-foot-left">
-						<a href="javascript:void (0)" class="shp-store-co shp-store-active" style="margin:.22rem 0 0 .12rem "></a><span class="shp-store-total">全选</span>
-					</div>
-					<div class="npost-foot-delete">删除产品</div>
-					<div class="npost-foot-collect">加入收藏</div>
-					<div class="npost-foot-price">
-						<span class="npost-price-su">合计：<em>¥69222.45</em></span>
-						<span class="store-goods-tax">税费：¥69.54</span>
-					</div>
-					<div class="npost-foot-clear">结算（1）</div>
-				</div>
-			</div>
+                <div class="shp-store-goods">
+                    <a href="javascript: void (0)" class="shp-store-co" style="margin-top: .5rem"></a>
+                    <div class="store-goods-gd">
+                        <img src="img/goods_02.jpg" class="store-goods-img">
+                        <div class="store-goods-de">
+                            <div class="store-goods-sc">
+                                <span class="store-goods-name">头皮的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；离开多久没来倒萨里；</span>
+                                <span class="store-goods-price">¥11269.00</span>
+                            </div>
+                            <span class="store-goods-rulers"><em>CL01</em><em>桃色梦幻</em></span>
+                            <span class="store-goods-tax">税费：¥15.71</span>
+                        </div>
+                    </div>
+                    <div class="npost-shopping-btn">
+                        <a href="javascript:;" class="number-btn-reduce"><img src="img/ic_check_box_less_black.png"></a><input type="text" class="number-btn-amount" value="1"><a href="javascript:;" class="number-btn-add"><img src="img/ic_check_box_add_black.png"></a>
+                    </div>
+                </div>
+            </div>
 
-			<div class="shp-cart-goods">
-				<!--登录之后购物车为空-->
-				<div class="shp-cart-no">
-					<img src="img/pic_shopping_empty.png">
-					<span>您的购物车没有任何商品哦</span>
-					<a href="javascript: void (0)" class="shp-go-shopping">去逛逛</a>
-				</div>
+            <div class="shp-item-store">
+                <div class="nhr"></div>
+                <div class="shp-store-to"><a href="javascript:void (0)" class="shp-store-co" style="margin-top: .12rem; "></a><span
+                        class="shp-store-name">店铺：乐虎海外直邮分布</span></div>
+                <div class="shp-store-activity">
+                    <span class="shp-activity-name">每满600远减200活动（已减200）</span><a href="javascript:void (0)"
+                                                                                 class="shp-go">再逛逛<img
+                        src="img/icon_arrow_right_red.png"></a>
+                </div>
 
-				<!--浏览历史-->
-				<div class="shp-history">
-					<p>浏览历史</p>
-					<div class="swiper-container">
-						<ul class="swiper-wrapper">
-							<li class="swiper-slide shp-history-goods">
-								<img src="img/goods_02.jpg">
-								<div class="shp-history-price">
-									<span class="shp-goods-name">家庭挂画这瓜此阿妹要什么东大街啊好累噶第三</span>
-									<span class="shp-goods-price"><em>¥80</em><del>¥120</del></span>
-								</div>
-							</li>
-							<li class="swiper-slide shp-history-goods">
-								<img src="img/goods_02.jpg">
-								<div class="shp-history-price">
-									<span class="shp-goods-name">家庭挂画这瓜此阿妹要什么东大街啊好累噶第三</span>
-									<span class="shp-goods-price"><em>¥80</em><del>¥120</del></span>
-								</div>
-							</li>
-							<li class="swiper-slide shp-history-goods">
-								<img src="img/goods_02.jpg">
-								<div class="shp-history-price">
-									<span class="shp-goods-name">家庭挂画这瓜此阿妹要什么东大街啊好累噶第三</span>
-									<span class="shp-goods-price"><em>¥80</em><del>¥120</del></span>
-								</div>
-							</li>
-							<li class="swiper-slide shp-history-goods">
-								<img src="img/goods_02.jpg">
-								<div class="shp-history-price">
-									<span class="shp-goods-name">家庭挂画这瓜此阿妹要什么东大街啊好累噶第三</span>
-									<span class="shp-goods-price"><em>¥80</em><del>¥120</del></span>
-								</div>
-							</li>
-							<li class="swiper-slide shp-history-goods">
-								<img src="img/goods_02.jpg">
-								<div class="shp-history-price">
-									<span class="shp-goods-name">家庭挂画这瓜此阿妹要什么东大街啊好累噶第三</span>
-									<span class="shp-goods-price"><em>¥80</em><del>¥120</del></span>
-								</div>
-							</li>
-							<li class="swiper-slide shp-history-goods">
-								<img src="img/goods_02.jpg">
-								<div class="shp-history-price">
-									<span class="shp-goods-name">家庭挂画这瓜此阿妹要什么东大街啊好累噶第三</span>
-									<span class="shp-goods-price"><em>¥80</em><del>¥120</del></span>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
+                <!--goodsList-->
+                <div class="shp-store-goods">
+                    <a href="javascript: void (0)" class="shp-store-co shp-store-active" style="margin-top: .5rem"></a>
+                    <div class="store-goods-gd">
+                        <img src="img/goods_02.jpg" class="store-goods-img">
+                        <div class="store-goods-de">
+                            <div class="store-goods-sc">
+                                <span class="store-goods-name">头皮的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；离开多久没来倒萨里；</span>
+                                <span class="store-goods-price">¥11269.00</span>
+                            </div>
+                            <span class="store-goods-rulers"><em>CL01</em><em>桃色梦幻</em></span>
+                            <span class="store-goods-tax">税费：¥15.71</span>
+                        </div>
+                    </div>
+                    <div class="npost-shopping-btn">
+                        <a href="javascript:;" class="number-btn-reduce"><img src="img/ic_check_box_less_black.png"></a><input type="text" class="number-btn-amount" value="1"><a href="javascript:;" class="number-btn-add"><img src="img/ic_check_box_add_black.png"></a>
+                    </div>
+                </div>
 
-			</div>
+                <div class="shp-store-goods">
+                    <a href="javascript: void (0)" class="shp-store-co" style="margin-top: .5rem"></a>
+                    <div class="store-goods-gd">
+                        <img src="img/goods_02.jpg" class="store-goods-img">
+                        <div class="store-goods-de">
+                            <div class="store-goods-sc">
+                                <span class="store-goods-name">头皮的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；的撒娇可归纳；离开多久没来倒萨里；</span>
+                                <span class="store-goods-price">¥11269.00</span>
+                            </div>
+                            <span class="store-goods-rulers"><em>CL01</em><em>桃色梦幻</em></span>
+                            <span class="store-goods-tax">税费：¥15.71</span>
+                        </div>
+                    </div>
+                    <div class="npost-shopping-btn">
+                        <a href="javascript:;" class="number-btn-reduce"><img src="img/ic_check_box_less_black.png"></a><input type="text" class="number-btn-amount" value="1"><a href="javascript:;" class="number-btn-add"><img src="img/ic_check_box_add_black.png"></a>
+                    </div>
+                </div>
+            </div>
 
-		</div>
+        </div>
 
-	</body>
-	<script type="text/javascript">
-		$(window).ready(function() {
-			var SWIDTH = $('.swiper-slide').width();
-			$('.swiper-wrapper').css("width", SWIDTH * ($('.swiper-slide').length + 20));
-		})
-	</script>
+        <!--店铺-->
+    </div>
 
+    <div style="display: none" class="npost-foot">
+        <div class="npost-foot-main">
+            <div class="npost-foot-left">
+                <a href="javascript:void (0)" class="shp-store-co shp-store-active" style="margin:.22rem 0 0 .12rem "></a><span class="shp-store-total">全选</span>
+            </div>
+            <div class="npost-foot-delete">删除产品</div>
+            <div class="npost-foot-collect">加入收藏</div>
+            <div class="npost-foot-price">
+                <span class="npost-price-su">合计：<em>¥69222.45</em></span>
+                <span class="store-goods-tax">税费：¥69.54</span>
+            </div>
+            <div class="npost-foot-clear">结算（1）</div>
+        </div>
+    </div>
+
+    <div class="shp-cart-goods" style="display: none">
+        <!--登录之后购物车为空-->
+        <div class="shp-cart-no">
+            <img src="img/pic_shopping_empty.png">
+            <span>您的购物车没有任何商品哦</span>
+            <a href="javascript: void (0)" class="shp-go-shopping">去逛逛</a>
+        </div>
+
+        <!--浏览历史-->
+        <div class="shp-history">
+            <p>浏览历史</p>
+            <div class="swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide shp-history-goods">
+                        <img src="img/goods_02.jpg">
+                        <div class="shp-history-price">
+                            <span class="shp-goods-name">家庭挂画这瓜此阿妹要什么东大街啊好累噶第三</span>
+                            <span class="shp-goods-price"><em>¥80</em><del>¥120</del></span>
+                        </div>
+                    </li>
+                    <li class="swiper-slide shp-history-goods">
+                        <img src="img/goods_02.jpg">
+                        <div class="shp-history-price">
+                            <span class="shp-goods-name">家庭挂画这瓜此阿妹要什么东大街啊好累噶第三</span>
+                            <span class="shp-goods-price"><em>¥80</em><del>¥120</del></span>
+                        </div>
+                    </li>
+                    <li class="swiper-slide shp-history-goods">
+                        <img src="img/goods_02.jpg">
+                        <div class="shp-history-price">
+                            <span class="shp-goods-name">家庭挂画这瓜此阿妹要什么东大街啊好累噶第三</span>
+                            <span class="shp-goods-price"><em>¥80</em><del>¥120</del></span>
+                        </div>
+                    </li>
+                    <li class="swiper-slide shp-history-goods">
+                        <img src="img/goods_02.jpg">
+                        <div class="shp-history-price">
+                            <span class="shp-goods-name">家庭挂画这瓜此阿妹要什么东大街啊好累噶第三</span>
+                            <span class="shp-goods-price"><em>¥80</em><del>¥120</del></span>
+                        </div>
+                    </li>
+                    <li class="swiper-slide shp-history-goods">
+                        <img src="img/goods_02.jpg">
+                        <div class="shp-history-price">
+                            <span class="shp-goods-name">家庭挂画这瓜此阿妹要什么东大街啊好累噶第三</span>
+                            <span class="shp-goods-price"><em>¥80</em><del>¥120</del></span>
+                        </div>
+                    </li>
+                    <li class="swiper-slide shp-history-goods">
+                        <img src="img/goods_02.jpg">
+                        <div class="shp-history-price">
+                            <span class="shp-goods-name">家庭挂画这瓜此阿妹要什么东大街啊好累噶第三</span>
+                            <span class="shp-goods-price"><em>¥80</em><del>¥120</del></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+</body>
+<script type="text/javascript">
+    $(window).ready(function () {
+        var SWIDTH = $('.swiper-slide').width();
+        $('.swiper-wrapper').css("width",SWIDTH*($('.swiper-slide').length + 20 ));
+    })
+</script>
 </html>
