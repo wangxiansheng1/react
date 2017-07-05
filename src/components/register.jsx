@@ -190,11 +190,15 @@ class Register extends Component {
 
     }
 
+    handleBack(){
+        history.go(-1);
+    }
+
     render() {
         return (
             <div>
                 <header className="header">
-                    <a href="javascript:;" className="back"></a>
+                    <a href="javascript:void (0)" className="back" onClick={this.handleBack.bind(this)}></a>
                     <h2>注册</h2>
                 </header>
 
@@ -230,7 +234,7 @@ class Register extends Component {
                         </div>
 
                         <div className="item item-btns">
-                            <a className="btn-login btn-disabled" href="javascript:;" onClick={this.handleRegister.bind(this)}>注册</a>
+                            <a className="btn-login btn-disabled" href="javascript:void (0)" onClick={this.handleRegister.bind(this)}>注册</a>
                         </div>
                     </div>
                 </section>

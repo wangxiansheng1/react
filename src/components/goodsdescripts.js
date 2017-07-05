@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 class GoodsDescripts extends Component {
-	constructor(props) {
-		super(props);
-		this.props = {
-			goods: []
-		}
-	}
+    constructor(props) {
+        super(props);
+        this.props = {
+            goods: []
+        }
+    }
 
-	render() {
-		return(
-			<div className="goodslist">
+    render() {
+        return (
+            <div className="goodslist">
                 <ul>
                     {
                         this.props.goods.map((item, index) => {
@@ -28,8 +28,8 @@ class GoodsDescripts extends Component {
                     }
                 </ul>
             </div>
-		)
-	}
+        )
+    }
 
 }
 

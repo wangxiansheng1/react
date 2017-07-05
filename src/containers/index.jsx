@@ -1,15 +1,14 @@
-
 //首页
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import APi from '../config/api';
-import { iScroll } from '../lib/iscroll';
+import {iScroll} from '../lib/iscroll';
 
 import '../style/index.css';
 
-class Index extends Component{
-    constructor(props){
+class Index extends Component {
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -17,20 +16,20 @@ class Index extends Component{
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         let myscroll;
         let that = this;
         let params = {
-            url : 'http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/index/getTitle',
+            url: 'http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/index/getTitle',
             method: 'post',
-            params:{}
+            params: {}
         };
 
         APi(params)
             .then(data => {
-                if(data.code == 1){
+                if (data.code == 1) {
                     that.setState({
-                        getTitle : data.response
+                        getTitle: data.response
                     })
                 }
                 else {
@@ -44,21 +43,23 @@ class Index extends Component{
 
 
         function loaded() {
-            myscroll = new iScroll("wrapper",{
-                hScroll:true,
-                vScroll:false,
+            myscroll = new iScroll("wrapper", {
+                hScroll: true,
+                vScroll: false,
                 bounce: true,
                 hScrollbar: false,
                 hideScrollbar: true
             });
         }
-        window.addEventListener("DOMContentLoaded",loaded,false);
+
+        window.addEventListener("DOMContentLoaded", loaded, false);
 
     }
 
-    render(){
-        let { getTitle } = this.state;
-        return(
+
+    render() {
+        let {getTitle} = this.state;
+        return (
             <div>
                 <div className="navbar-header">
                     <header>
@@ -71,12 +72,15 @@ class Index extends Component{
                         <div className="scroll-wrap" id="wrapper">
                             <ul className="equal-table fixed">
                                 {
-                                    getTitle.map((item,index) =>{
-                                        if(index == 0){
-                                            return  <li key={index} className="nav-current"><a href="javascript:void (0)"><span>{item.titlename}</span></a></li>
+                                    getTitle.map((item, index) => {
+                                        if (index == 0) {
+                                            return <li key={index}
+                                                       className="nav-current"><a
+                                                href="javascript:void (0)"><span>{item.titlename}</span></a></li>
                                         }
                                         else {
-                                            return  <li key={index}><a href="javascript:void (0)"><span>{item.titlename}</span></a></li>
+                                            return <li key={index} ><a
+                                                href="javascript:void (0)"><span>{item.titlename}</span></a></li>
                                         }
                                     })
                                 }

@@ -1,0 +1,7 @@
+.ui-picker-address .ui-picker-wrapper {
+    width: 33%;
+    float: left;
+}
+.ui-picker-address .ui-picker-wrapper:nth-child(2) {
+    width: 34%;
+}
